@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: iamjessica-backend
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn scraper:app
+    envVars:
+      - key: INSTALOADER_SESSIONFILE
+        value: /path/to/your/sessionfile
